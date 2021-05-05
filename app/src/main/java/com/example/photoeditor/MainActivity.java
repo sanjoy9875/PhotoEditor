@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+     //For google add ->
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         binding.adView.loadAd(adRequest);
 
+    //For hide the actionbar->
     getSupportActionBar().hide();
 
      //Intent for chose an image from gallery->
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+     //Request for camera permission->
         binding.ivCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,6 +124,8 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(dsPhotoEditorIntent, RESULT_REQ_CODE);
         }
     }
+
+    //Function for Change the bitmap format to Uri ->
     public Uri getImageUri(Bitmap bitmap){
         ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,arrayOutputStream);

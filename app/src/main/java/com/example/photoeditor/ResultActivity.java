@@ -25,11 +25,15 @@ public class ResultActivity extends AppCompatActivity {
         binding = ActivityResultBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+      //For hide the actionbar->
         getSupportActionBar().hide();
 
+    //get the edited image and showed to the result activity->
             Uri image =getIntent().getData();
             binding.ivImage.setImageURI(image);
 
+
+     //For google ad ->
         AdRequest adRequest = new AdRequest.Builder().build();
 
         InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, new InterstitialAdLoadCallback() {
